@@ -149,8 +149,15 @@ export class LinkedList {
 
   removeAt(index) {
     //that removes the node at the given index.
-    const parentNode = this.at(index - 1);
-    const newNode = new Node(value, parentNode.nextNode);
-    parentNode.nextNode = newNode;
+    if (index >= this.size()) {
+      return;
+    }
+
+    if (index === 0) {
+      this.firstNode = this.head().nextNode;
+    } else {
+      const parentNode = this.at(index - 1);
+      parentNode.nextNode = parentNode.nextNode.nextNode;
+    }
   }
 }

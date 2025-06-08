@@ -40,3 +40,18 @@ console.log(myList.toString());
 
 myList.insertAt("pig", 0);
 console.log(myList.toString());
+
+myList.removeAt(0);
+console.log(myList.toString());
+
+myList.removeAt(50);
+console.log(myList.toString()); //no change
+
+myList.removeAt(myList.size() / 2);
+console.log(myList.toString());
+
+myList.removeAt(myList.size());
+console.log(myList.toString()); //no change
+
+myList.removeAt(myList.size() - 1);
+console.log(myList.toString());
