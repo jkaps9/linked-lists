@@ -72,6 +72,10 @@ export class LinkedList {
       return currentNode;
     }
 
+    if (index < 1 || index >= this.size()) {
+      return null;
+    }
+
     while (currentNode && currentIndex < index) {
       currentNode = currentNode.nextNode;
       currentIndex++;
@@ -130,9 +134,23 @@ export class LinkedList {
 
   insertAt(value, index) {
     //that inserts a new node with the provided value at the given index.
+
+    if (index === 0) {
+      this.prepend(value);
+    } else if (index >= this.size()) {
+      this.append(value);
+    } else {
+      const parentNode = this.at(index - 1);
+
+      const newNode = new Node(value, parentNode.nextNode);
+      parentNode.nextNode = newNode;
+    }
   }
 
   removeAt(index) {
     //that removes the node at the given index.
+    const parentNode = this.at(index - 1);
+    const newNode = new Node(value, parentNode.nextNode);
+    parentNode.nextNode = newNode;
   }
 }

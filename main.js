@@ -30,3 +30,13 @@ console.log(myList.find("snake")); //5
 console.log(myList.find("parrot")); //3
 console.log(myList.find("cheetah")); //0
 console.log(myList.find("jaguar")); //null
+
+console.log(myList.toString());
+myList.insertAt("lynx", 3);
+console.log(myList.toString());
+
+myList.insertAt("fox", 12);
+console.log(myList.toString());
+
+myList.insertAt("pig", 0);
+console.log(myList.toString());
